@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    border: 2px solid cyan;
+    background-image: url(background\ image.jpg);
+}
+
+#login_box {
+    width: 40%;
+    height: 250px;
+    background: rgba(225, 225, 225, 0.3);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(201, 244, 244, 0.5);
+    box-shadow: 2px 2px 5px white;
+    margin: 200px auto;
+}
+
+h1 {
+    color: white;
+    text-shadow: -3px 1px 4px blue;
+    background: rgba(225, 225, 225, 0.5);
+    backdrop-filter: blur(10px);
+    text-align: center;
+
+}
+
+.parent_button {
+    border: 2px solid gray;
+    margin: 20px;
+    height: 40px;
+    width: 90%;
+    padding: 10px;
+
+}
+
+.parent>button {
+    color: white;
+    border: none;
+    text-shadow: -3px 1px 4px blue;
+    background: rgba(225, 225, 225, 0.6);
+    backdrop-filter: blur(10px);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 30px;
+
+}
+
+.parent>button:hover {
+    border: 2px solid black;
+    color: black;
+    text-shadow: -3px 1px 4px gray;
+    background: white;
+    box-shadow: -3px 1px 4px blue;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: rgb(0, 30, 255);
+    opacity: 0.5;
+}
+
+#todo {
+    /* border: 2px solid #000000; */
+    width: 65%;
+    margin: 0px auto;
+}
+
+/* *********************** for todo page**************************** */
+
+.todo_block {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#tod_text {
+    width: 80%;
+    padding: 15px;
+    font-size: 15px;
+    margin: 10px;
+}
+
+.btn {
+    height: 50px;
+    padding: 15px;
+    font-weight: bold;
+    color: white;
+    text-shadow: -3px 1px 4px blue;
+    background: rgba(225, 225, 225, 0.8);
+    backdrop-filter: blur(10px);
+    border: none;
+}
+
+.btn:hover {
+    border: 2px solid black;
+    color: black;
+    text-shadow: -3px 1px 4px gray;
+    background: white;
+    box-shadow: -3px 1px 4px blue;
+    cursor: pointer;
+}
+
+ul {
+    width: 93%;
+    max-height: 70vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li {
+    width: 100%;
+    padding-left: 10px;
+    font-size: 25px;
+    margin: 10px;
+    padding: 15px;
+    /* font-weight: bold; */
+    color: white;
+    text-shadow: -3px 1px 4px blue;
+    background: rgba(225, 225, 225, 0.5);
+    backdrop-filter: blur(10px);
+    /* background-color: white; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logout_btn {
+    width: 93%;
+    color: white;
+    border: none;
+    text-shadow: -3px 1px 4px blue;
+    background: rgba(225, 225, 225, 0.6);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    font-size: 20px;
+    letter-spacing: 30px;
+
+
+}
+
+.logout_btn:hover {
+    border: 2px solid black;
+    color: black;
+    text-shadow: -3px 1px 4px gray;
+    background: white;
+    box-shadow: -3px 1px 4px blue;
+    cursor: pointer;
+}
+
+/* *********************** for todo page**************************** */
+
+
+/* @media only screen and (max-width: 400px) { */
+
+@media only screen and (max-width: 700px) {
+
+    #login_box {
+        width: 60%;
+    }
+    #todo {
+        width: 85%;
+    }
+}
+
+
+
+@media only screen and (max-width: 500px) {
+
+    #login_box {
+        width: 80%;
+    }
+
+    #todo {
+        width: 95%;
+    }
+
+    li {font-size: 15px;
+        /* color: rgb(65, 65, 235); */
+        color: rgb(87, 39, 11);
+        text-shadow: 1px 1px 1px rgb(71, 71, 243);
+    }
+}
+
+
+
+@media only screen and (max-width: 350px) {
+
+    #login_box {
+        width: 95%;
+        margin: 150px auto;
+    }
+
+    h1{ font-size: 20px;}
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- css file link -->
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <br> <h1 id="title">Simple Notes App Using Local Storage</h1> <br>
+    
+    <div class="parent" id="login_box">
+        <input class="parent_button" type="email" id="email" placeholder="abc@gmail.com" required>
+        <input class="parent_button" type="password" id="password" required placeholder="enter password">
+        <button class="parent_button" type="button" onclick="sumbit()">Login</button>
+    </div>
+
+    <div id="todo">
+
+        <div class="todo_block">
+            <input type="text" placeholder="todo text" id="tod_text" maxlength="30">
+            <button class="btn" onclick="add_todo()">ADD TODO</button>
+        </div>
+
+        <ul id="todo_display_list" >Todo display list</ul>
+<br>
+        <button class="logout_btn" type="button" onclick="logout()">Logout</button>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
