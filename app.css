@@ -8,6 +8,7 @@ body {
     width: 100%;
     height: 100vh;
     overflow-y: scroll;
+    background-color: rgb(3, 3, 16);
     /* border: 2px solid cyan; */
     background-image: url(assignment\ background\ image\ 2.jpg);
     background-repeat: no-repeat;
@@ -25,7 +26,7 @@ body {
 }
 
 h1 {
-    margin-top: 10px;
+    margin-top: 5px;
     color: white;
     text-shadow: -3px 1px 4px blue;
     background: rgba(225, 225, 225, 0.5);
@@ -84,9 +85,9 @@ h1 {
 .todo_block {
     width: 95%;
     margin: 0px auto;
-    /* border: 2px solid rgb(51, 193, 7);  */
-    justify-content: space-between;
-    display: flex;
+   /* border: 2px solid rgb(51, 193, 7);  */
+   justify-content: space-between;
+   display: flex;
     align-items: center;
     text-align: center;
 }
@@ -101,7 +102,7 @@ h1 {
     justify-content: space-between;
     align-items: center; */
     /* border: 2px solid rgb(121, 42, 42); */
-
+    
 }
 
 .btn {
@@ -162,7 +163,7 @@ li {
     background: rgba(225, 225, 225, 0.6);
     backdrop-filter: blur(10px);
     text-align: center;
-    margin: 20px auto;
+    margin: 10px auto;
     display: flex;
     justify-content: center;
     padding: 5px;
@@ -182,7 +183,7 @@ li {
 }
 
 
-.admincolor {
+.admincolor{
     /* background-color: rgb(120, 237, 120); */
     color: white;
     border: none;
@@ -196,16 +197,14 @@ li {
 
 /* *********************** for todo page**************************** */
 
-@media only screen and (max-width : 960px) {
+@media only screen and (max-width : 960px){
 
     .todo_block {
-        width: 95%;
-    }
+    width: 95%;}
 
 
-    #tod_text {
-        width: 79%;
-    }
+#tod_text {
+    width: 79%;}
 }
 
 @media only screen and (max-width: 700px) {
@@ -213,39 +212,31 @@ li {
     #login_box {
         width: 60%;
     }
-
     #todo {
         width: 85%;
     }
-
-    li {
-        font-size: 20px;
-    }
+   li{ font-size: 20px;}
 
 }
 
 
 
 @media only screen and (max-width: 500px) {
-    body {
-        width: 100%;
-        height: 100vh;}
 
     #login_box {
         width: 80%;
     }
-
     .todo_block {
         width: 95%;
         margin: 0px auto;
-        /* border: 2px solid rgb(51, 193, 7);  */
-        justify-content: space-between;
-        display: flex;
-        flex-direction: column;
+       /* border: 2px solid rgb(51, 193, 7);  */
+       justify-content: space-between;
+       display: flex;
+       flex-direction: column;
         align-items: center;
         text-align: center;
     }
-
+    
     #tod_text {
         width: 100%;
         height: 50px;
@@ -253,9 +244,9 @@ li {
         font-size: 15px;
         margin-top: 7px;
         margin-bottom: 10px;
-
+             
     }
-
+    
     .btn {
         width: 100%;
         height: 35px;
@@ -267,22 +258,17 @@ li {
         backdrop-filter: blur(10px);
         border: none;
     }
-
-    li {
-        font-size: 15px;
-    }
+    li {font-size: 15px; }
 }
 
 
 
 @media only screen and (max-width: 350px) {
 
-      #login_box {
+    #login_box {
         width: 95%;
         margin: 150px auto;
     }
-
-    h1 {
-        font-size: 20px;
-    }
+    
+    h1{ font-size: 20px;}
 }

@@ -29,7 +29,7 @@ function checkuserlogin() {
   var login_user = localStorage.getItem("eml");
   if (login_user) {
     todo.style.display = "block";
-    title.innerText = "User : " + login_user;//display title on top
+    title.innerText = login_user;//display title on top
     login_box.style.display = "none";
     email.value = "";
     password.value = "";
