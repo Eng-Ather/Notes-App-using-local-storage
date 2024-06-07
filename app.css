@@ -8,8 +8,10 @@ body {
     width: 100%;
     height: 100vh;
     overflow-y: scroll;
-    border: 2px solid cyan;
-    background-image: url(background\ image.jpg);
+    /* border: 2px solid cyan; */
+    background-image: url(assignment\ background\ image\ 2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #login_box {
@@ -23,6 +25,7 @@ body {
 }
 
 h1 {
+    margin-top: 10px;
     color: white;
     text-shadow: -3px 1px 4px blue;
     background: rgba(225, 225, 225, 0.5);
@@ -67,30 +70,44 @@ h1 {
 }
 
 #todo {
-    /* border: 2px solid #000000; */
-    width: 65%;
+    /* border: 2px solid rgb(121, 42, 42); */
+    width: 50%;
     margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
 
 /* *********************** for todo page**************************** */
 
 .todo_block {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+    width: 95%;
+    margin: 0px auto;
+   /* border: 2px solid rgb(51, 193, 7);  */
+   justify-content: space-between;
+   display: flex;
     align-items: center;
+    text-align: center;
 }
 
 #tod_text {
     width: 80%;
     padding: 15px;
     font-size: 15px;
-    margin: 10px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    /* border: 2px solid rgb(121, 42, 42); */
+    
 }
 
 .btn {
+    width: 15%;
     height: 50px;
-    padding: 15px;
+    padding: 13px;
     font-weight: bold;
     color: white;
     text-shadow: -3px 1px 4px blue;
@@ -109,7 +126,7 @@ h1 {
 }
 
 ul {
-    width: 93%;
+    width: 95%;
     max-height: 70vh;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -145,7 +162,7 @@ li {
     background: rgba(225, 225, 225, 0.6);
     backdrop-filter: blur(10px);
     text-align: center;
-    margin: 0px auto;
+    margin: 20px auto;
     display: flex;
     justify-content: center;
     padding: 5px;
@@ -164,10 +181,30 @@ li {
     cursor: pointer;
 }
 
+
+.admincolor{
+    /* background-color: rgb(120, 237, 120); */
+    color: white;
+    border: none;
+    text-shadow: -3px 1px 4px blue;
+    background: rgba(120, 237, 120, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+
+
+
 /* *********************** for todo page**************************** */
 
+@media only screen and (max-width : 960px){
 
-/* @media only screen and (max-width: 400px) { */
+    .todo_block {
+    width: 95%;}
+
+
+#tod_text {
+    width: 79%;}
+}
 
 @media only screen and (max-width: 700px) {
 
@@ -177,6 +214,8 @@ li {
     #todo {
         width: 85%;
     }
+   li{ font-size: 20px;}
+
 }
 
 
@@ -192,9 +231,9 @@ li {
     }
 
     li {font-size: 15px;
-        /* color: rgb(65, 65, 235); */
+        /* color: rgb(65, 65, 235);
         color: rgb(87, 39, 11);
-        text-shadow: 1px 1px 1px rgb(71, 71, 243);
+        text-shadow: 1px 1px 1px rgb(71, 71, 243); */
     }
 }
 
@@ -207,5 +246,47 @@ li {
         margin: 150px auto;
     }
 
+    /* .btn {font-size: 8px;} */
+
+
+
+
+    .todo_block {
+        width: 95%;
+        margin: 0px auto;
+       /* border: 2px solid rgb(51, 193, 7);  */
+       justify-content: space-between;
+       display: flex;
+       flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    #tod_text {
+        width: 100%;
+        height: 50px;
+        padding: 15px;
+        font-size: 15px;
+        margin-top: 7px;
+        margin-bottom: 10px;
+        /* display: flex;
+        justify-content: space-between;
+        align-items: center; */
+        /* border: 2px solid rgb(121, 42, 42); */
+        
+    }
+    
+    .btn {
+        width: 100%;
+        height: 35px;
+        /* padding: 13px; */
+        font-weight: bold;
+        color: white;
+        text-shadow: -3px 1px 4px blue;
+        background: rgba(225, 225, 225, 0.8);
+        backdrop-filter: blur(10px);
+        border: none;
+    }
+    
     h1{ font-size: 20px;}
 }
