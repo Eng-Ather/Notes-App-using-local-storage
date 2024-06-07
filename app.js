@@ -104,18 +104,20 @@ function displaytodolist() {
     arr.forEach(function (data, index) {
 
       //***************( display all data b/c admin is login)*****************
-      if (login_user == "admin@gmail.com") { 
+      if (login_user == "admin@gmail.com" && data.id == "admin@gmail.com") { 
 
-        if (data.id == "admin@gmail.com") { 
+        // if (data.id == "admin@gmail.com") { 
           var li = `<li class="admincolor">  ${data.work} ---- ${data.id} 
           <span> <button onclick = "del(${index})"> Delete </button> </span> </li>`;
          todo_display_list.innerHTML += li;
-        //  todo_display_list.style.backgroundColor = "red"
-        } 
-         else{
+        //  todo_display_list.style.backgroundColor = "red
+        }
+          else if (login_user == "admin@gmail.com" && data.id != "admin@gmail.com"){
+
+
            var li = `<li> ${data.work} ---- ${data.id} </li>`;
            todo_display_list.innerHTML += li; } 
-      }
+      // }
       //***************(display current user data only)************************
       if (login_user === data.id && login_user != "admin@gmail.com" ) {     
         var li = `<li>  ${data.work} 
