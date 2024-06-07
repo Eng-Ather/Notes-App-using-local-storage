@@ -84,9 +84,9 @@ h1 {
 .todo_block {
     width: 95%;
     margin: 0px auto;
-   /* border: 2px solid rgb(51, 193, 7);  */
-   justify-content: space-between;
-   display: flex;
+    /* border: 2px solid rgb(51, 193, 7);  */
+    justify-content: space-between;
+    display: flex;
     align-items: center;
     text-align: center;
 }
@@ -101,7 +101,7 @@ h1 {
     justify-content: space-between;
     align-items: center; */
     /* border: 2px solid rgb(121, 42, 42); */
-    
+
 }
 
 .btn {
@@ -182,7 +182,7 @@ li {
 }
 
 
-.admincolor{
+.admincolor {
     /* background-color: rgb(120, 237, 120); */
     color: white;
     border: none;
@@ -196,14 +196,16 @@ li {
 
 /* *********************** for todo page**************************** */
 
-@media only screen and (max-width : 960px){
+@media only screen and (max-width : 960px) {
 
     .todo_block {
-    width: 95%;}
+        width: 95%;
+    }
 
 
-#tod_text {
-    width: 79%;}
+    #tod_text {
+        width: 79%;
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -211,10 +213,14 @@ li {
     #login_box {
         width: 60%;
     }
+
     #todo {
         width: 85%;
     }
-   li{ font-size: 20px;}
+
+    li {
+        font-size: 20px;
+    }
 
 }
 
@@ -226,14 +232,41 @@ li {
         width: 80%;
     }
 
-    #todo {
+    .todo_block {
         width: 95%;
+        margin: 0px auto;
+        /* border: 2px solid rgb(51, 193, 7);  */
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    li {font-size: 15px;
-        /* color: rgb(65, 65, 235);
-        color: rgb(87, 39, 11);
-        text-shadow: 1px 1px 1px rgb(71, 71, 243); */
+    #tod_text {
+        width: 100%;
+        height: 50px;
+        padding: 15px;
+        font-size: 15px;
+        margin-top: 7px;
+        margin-bottom: 10px;
+
+    }
+
+    .btn {
+        width: 100%;
+        height: 35px;
+        /* padding: 13px; */
+        font-weight: bold;
+        color: white;
+        text-shadow: -3px 1px 4px blue;
+        background: rgba(225, 225, 225, 0.8);
+        backdrop-filter: blur(10px);
+        border: none;
+    }
+
+    li {
+        font-size: 15px;
     }
 }
 
@@ -246,47 +279,7 @@ li {
         margin: 150px auto;
     }
 
-    /* .btn {font-size: 8px;} */
-
-
-
-
-    .todo_block {
-        width: 95%;
-        margin: 0px auto;
-       /* border: 2px solid rgb(51, 193, 7);  */
-       justify-content: space-between;
-       display: flex;
-       flex-direction: column;
-        align-items: center;
-        text-align: center;
+    h1 {
+        font-size: 20px;
     }
-    
-    #tod_text {
-        width: 100%;
-        height: 50px;
-        padding: 15px;
-        font-size: 15px;
-        margin-top: 7px;
-        margin-bottom: 10px;
-        /* display: flex;
-        justify-content: space-between;
-        align-items: center; */
-        /* border: 2px solid rgb(121, 42, 42); */
-        
-    }
-    
-    .btn {
-        width: 100%;
-        height: 35px;
-        /* padding: 13px; */
-        font-weight: bold;
-        color: white;
-        text-shadow: -3px 1px 4px blue;
-        background: rgba(225, 225, 225, 0.8);
-        backdrop-filter: blur(10px);
-        border: none;
-    }
-    
-    h1{ font-size: 20px;}
 }
