@@ -67,8 +67,11 @@ function add_todo() {
 
   if (tod_text.value) {
     var login_user = localStorage.getItem("eml"); 
-    var object = { id: login_user, work: tod_text.value };
-
+    var d = new Date()
+    var day=["Sunday", "Monday","Tuesday"]
+    var object = { id: login_user, work: tod_text.value, time:day[d.getDay()],
+      date: `${d.getDate()} - ${d.getMonth()}- ${d.getFullYear()}` };
+    console.log(object);
     var local_storage_array = localStorage.getItem("local_storage_array"); //geting arry from local storage
 
     //**************( if array is not epmty this part execute )*********************
@@ -107,7 +110,7 @@ function displaytodolist() {
       if (login_user == "admin@gmail.com" && data.id == "admin@gmail.com") { 
 
         // if (data.id == "admin@gmail.com") { 
-          var li = `<li class="admincolor">  ${data.work} ---- ${data.id} 
+          var li = `<li class="admincolor">  ${data.work} ${data.time} ${data.date} ${data.id} 
           <span> <button onclick = "del(${index})"> Delete </button> </span> </li>`;
          todo_display_list.innerHTML += li;
         //  todo_display_list.style.backgroundColor = "red
@@ -115,12 +118,12 @@ function displaytodolist() {
           else if (login_user == "admin@gmail.com" && data.id != "admin@gmail.com"){
 
 
-           var li = `<li> ${data.work} ---- ${data.id} </li>`;
+           var li = `<li> ${data.work} --- ${data.time} --- ${data.date}--- ${data.id} </li>`;
            todo_display_list.innerHTML += li; } 
       // }
       //***************(display current user data only)************************
       if (login_user === data.id && login_user != "admin@gmail.com" ) {     
-        var li = `<li>  ${data.work} 
+        var li = `<li>  ${data.work} ${data.time} ${data.date}
        <span> <button onclick = "del(${index})"> Delete </button> </span>   </li> `;
         todo_display_list.innerHTML += li; } 
     });

@@ -290,4 +290,8 @@ span>button{
     }
     
     h1{ font-size: 20px;}
+
+    .parent>button {padding-right: 10px;}
+
+    
 }
