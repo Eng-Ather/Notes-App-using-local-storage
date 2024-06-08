@@ -18,7 +18,7 @@ body {
 #login_box {
     width: 40%;
     height: 250px;
-    background: rgba(225, 225, 225, 0.3);
+    background: rgba(225, 225, 225, 0.2);
     backdrop-filter: blur(10px);
     border: 2px solid rgba(201, 244, 244, 0.5);
     box-shadow: 2px 2px 5px white;
@@ -29,44 +29,53 @@ h1 {
     margin-top: 5px;
     color: white;
     text-shadow: -3px 1px 4px blue;
-    background: rgba(225, 225, 225, 0.5);
+    background: rgba(225, 225, 225, 0.2);
     backdrop-filter: blur(10px);
+    /* padding: 10px; */
+    line-height: 50px;
     text-align: center;
 
 }
 
 .parent_button {
-    border: 2px solid gray;
+    border-color: white;
+    color: white;
+    text-shadow: -3px 1px 4px blue;
+    font-size: 20px;
+    background: rgba(225, 225, 225, 0.2);
+    backdrop-filter: blur(10px);
     margin: 20px;
     height: 40px;
     width: 90%;
     padding: 10px;
+    cursor: pointer;
 
 }
 
 .parent>button {
     color: white;
-    border: none;
+    border-color: white;
     text-shadow: -3px 1px 4px blue;
-    background: rgba(225, 225, 225, 0.6);
+    background: rgba(225, 225, 225, 0.2);
     backdrop-filter: blur(10px);
+    text-align: center;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
     font-size: 20px;
-    font-weight: bold;
     letter-spacing: 30px;
 
 }
 
 .parent>button:hover {
     border: 2px solid black;
-    color: black;
-    text-shadow: -3px 1px 4px gray;
-    background: white;
-    box-shadow: -3px 1px 4px blue;
+    box-shadow: -3px 1px 4px rgba(120, 237, 120, 0.6);;
     cursor: pointer;
 }
 
 ::placeholder {
-    color: rgb(0, 30, 255);
+    color: white;
     opacity: 0.5;
 }
 
@@ -84,7 +93,7 @@ h1 {
 
 .todo_block {
     width: 95%;
-    margin: 0px auto;
+    margin: 20px auto;
    /* border: 2px solid rgb(51, 193, 7);  */
    justify-content: space-between;
    display: flex;
@@ -95,7 +104,13 @@ h1 {
 #tod_text {
     width: 80%;
     padding: 15px;
-    font-size: 15px;
+    border-color: white;
+    color: white;
+    text-shadow: -3px 1px 4px blue;
+    font-size: 20px;
+    background: rgba(225, 225, 225, 0.2);
+    backdrop-filter: blur(10px);
+    font-size: 20px;
     margin-top: 7px;
     margin-bottom: 10px;
     /* display: flex;
@@ -112,17 +127,14 @@ h1 {
     font-weight: bold;
     color: white;
     text-shadow: -3px 1px 4px blue;
-    background: rgba(225, 225, 225, 0.8);
+    background: rgba(225, 225, 225, 0.2);
     backdrop-filter: blur(10px);
-    border: none;
+    border-color: white;
 }
 
 .btn:hover {
     border: 2px solid black;
-    color: black;
-    text-shadow: -3px 1px 4px gray;
-    background: white;
-    box-shadow: -3px 1px 4px blue;
+    box-shadow: -3px 1px 4px rgba(120, 237, 120, 0.6);;
     cursor: pointer;
 }
 
@@ -147,7 +159,7 @@ li {
     /* font-weight: bold; */
     color: white;
     text-shadow: -3px 1px 4px blue;
-    background: rgba(225, 225, 225, 0.5);
+    background: rgba(225, 225, 225, 0.2);
     backdrop-filter: blur(10px);
     /* background-color: white; */
     display: flex;
@@ -156,11 +168,11 @@ li {
 }
 
 .logout_btn {
-    width: 93%;
+    width: 95%;
     color: white;
-    border: none;
+    border-color: white;
     text-shadow: -3px 1px 4px blue;
-    background: rgba(225, 225, 225, 0.6);
+    background: rgba(225, 225, 225, 0.2);
     backdrop-filter: blur(10px);
     text-align: center;
     margin: 10px auto;
@@ -173,12 +185,9 @@ li {
 
 }
 
-.logout_btn:hover {
-    border: 2px solid black;
-    color: black;
-    text-shadow: -3px 1px 4px gray;
-    background: white;
-    box-shadow: -3px 1px 4px blue;
+.logout_btn:hover, span>button:hover {
+    border-color:  black;
+    box-shadow: -3px 3px 4px rgba(120, 237, 120, 0.6);
     cursor: pointer;
 }
 
@@ -188,11 +197,21 @@ li {
     color: white;
     border: none;
     text-shadow: -3px 1px 4px blue;
-    background: rgba(120, 237, 120, 0.6);
+    background: rgba(120, 237, 120, 0.2);
     backdrop-filter: blur(10px);
 }
 
-
+span>button{
+    background-color: transparent;
+    /* border-color: white; */
+    color: white;
+    border: none;
+    text-shadow: -3px 1px 4px blue;
+    /* background: rgba(120, 237, 120, 0.2); */
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    font-size: 15px;
+}
 
 
 /* *********************** for todo page**************************** */
