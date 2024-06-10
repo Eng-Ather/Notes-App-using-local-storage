@@ -63,11 +63,12 @@ function add_todo() {
   if (tod_text.value) {
     var login_user = localStorage.getItem("eml");
     var d = new Date();
-    var day = ["Sunday", "Monday", "Tuesday"];
+    var dayy = ["Sunday", "Monday", "Tuesday","Wednesday","Thrusday","friday","saturday"];
+    
     var object = {
       id: login_user,
       work: tod_text.value,
-      day: day[d.getDay()],
+      day: dayy[d.getDay()],
       date: `${d.getDate()} - ${d.getMonth()}- ${d.getFullYear()}`,
     };
     console.log(object);
