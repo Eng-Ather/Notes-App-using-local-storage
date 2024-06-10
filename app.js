@@ -6,21 +6,19 @@ var title = document.getElementById("title");
 
 checkuserlogin(); //jub first time website search hoge yea page refresh kia jay ga to yea check kry ga or jis ke id login hoeve hoge us ke detail display krda ga
 
-
-
 //**********************( user loginfunctin )*************************************/
 
-function sumbit() {  //agar koe bhe pehly sa login nahe hoga to submit button pa yea function chaly ga
-  
-  if (!email.value || !password.value){ return alert("enter email and pasword");}
-  else {
-    localStorage.setItem("eml", email.value);// jub koe login hoga to yea us ke email ko localac storage ma save krva da ga
-  } 
+function sumbit() {
+  //agar koe bhe pehly sa login nahe hoga to submit button pa yea function chaly ga
+
+  if (!email.value || !password.value) {
+    return alert("enter email and pasword");
+  } else {
+    localStorage.setItem("eml", email.value); // jub koe login hoga to yea us ke email ko localac storage ma save krva da ga
+  }
   checkuserlogin(); // jub user login ho jay ga to yea login form ko huta da ga or todo wala page show kr da ga
   displaytodolist(); //jub user login ho or pehly sa todo list ma koe data save ha to display ho jay ga
 }
-
-
 
 //**********************( user login check functin )*************************************/
 
@@ -29,12 +27,11 @@ function checkuserlogin() {
   var login_user = localStorage.getItem("eml");
   if (login_user) {
     todo.style.display = "block";
-    title.innerText = login_user;//display title on top
+    title.innerText = login_user; //display title on top
     login_box.style.display = "none";
     email.value = "";
     password.value = "";
-  } 
-  else {
+  } else {
     todo.style.display = "none";
     login_box.style.display = "block";
   }
@@ -52,46 +49,53 @@ function checkuserlogin() {
 function logout() {
   localStorage.removeItem("eml");
   checkuserlogin();
-  title.innerText = " Simple Notes App Using Local Storage " //display title on top
+  title.innerText = " Simple Notes App Using Local Storage "; //display title on top
 }
-
-
 
 //**********************( add_todo functin )*************************************/
 
-// yeha function pehly user_id or todo k text sa object bnay ga phr object array bnay ga 
+// yeha function pehly user_id or todo k text sa object bnay ga phr object array bnay ga
 // or phr us array ko local storage ma save kr da ga
 
 function add_todo() {
   var tod_text = document.getElementById("tod_text");
 
   if (tod_text.value) {
-    var login_user = localStorage.getItem("eml"); 
-    var d = new Date()
-    var day=["Sunday", "Monday","Tuesday"]
-    var object = { id: login_user, work: tod_text.value, time:day[d.getDay()],
-      date: `${d.getDate()} - ${d.getMonth()}- ${d.getFullYear()}` };
+    var login_user = localStorage.getItem("eml");
+    var d = new Date();
+    var day = ["Sunday", "Monday", "Tuesday"];
+    var object = {
+      id: login_user,
+      work: tod_text.value,
+      day: day[d.getDay()],
+      date: `${d.getDate()} - ${d.getMonth()}- ${d.getFullYear()}`,
+    };
     console.log(object);
     var local_storage_array = localStorage.getItem("local_storage_array"); //geting arry from local storage
 
     //**************( if array is not epmty this part execute )*********************
     if (local_storage_array) {
       object_wala_array = JSON.parse(local_storage_array); //converting back value in array form
-      object_wala_array .push(object); // pushing the created object in array
-      localStorage.setItem("local_storage_array", JSON.stringify(object_wala_array ));
+      object_wala_array.push(object); // pushing the created object in array
+      localStorage.setItem(
+        "local_storage_array",
+        JSON.stringify(object_wala_array)
+      );
       tod_text.value = "";
     }
 
     //*************( if array is epmty this part execute )****************************
     else {
-      object_wala_array  = [object];
-      console.log(object_wala_array );
-      localStorage.setItem("local_storage_array", JSON.stringify(object_wala_array ));
+      object_wala_array = [object];
+      console.log(object_wala_array);
+      localStorage.setItem(
+        "local_storage_array",
+        JSON.stringify(object_wala_array)
+      );
       tod_text.value = "";
     }
-  } else {
-    alert("field is empty");
-  }
+  } else {alert("field is empty"); }
+
   displaytodolist(); //jub user todo bna la ga tub yea unko list ma display kry ga
 }
 
@@ -105,32 +109,40 @@ function displaytodolist() {
   if (arr) {
     arr = JSON.parse(arr);
     arr.forEach(function (data, index) {
-
       //***************( display all data b/c admin is login)*****************
-      if (login_user == "admin@gmail.com" && data.id == "admin@gmail.com") { 
+      if (login_user == "admin@gmail.com" && data.id == "admin@gmail.com") {
+        var li = `<li class="admincolor"> 
+        <input type="checkbox" id="box">
+         ${data.work} -- ${data.id}
+         <span style="font-size:15px">${data.date} <hr> ${data.day}</span>   
+          <span> <button onclick = "del(${index})"> Delete </button> </span> 
+         </li>`;
+        todo_display_list.innerHTML += li;
 
-        // if (data.id == "admin@gmail.com") { 
-          var li = `<li class="admincolor">  ${data.work} ${data.time} ${data.date} ${data.id} 
-          <span> <button onclick = "del(${index})"> Delete </button> </span> </li>`;
-         todo_display_list.innerHTML += li;
-        //  todo_display_list.style.backgroundColor = "red
+        } else if (login_user == "admin@gmail.com" && data.id != "admin@gmail.com" ) {
+          var li = `<li >  
+          <input type="checkbox"  id="check_box" >
+          ${data.work} -- ${data.id}
+          <span style="font-size:15px">${data.date} <hr> ${data.day}</span>   
+           </li> `;
+        todo_display_list.innerHTML += li;
         }
-          else if (login_user == "admin@gmail.com" && data.id != "admin@gmail.com"){
 
-
-           var li = `<li> ${data.work} --- ${data.time} --- ${data.date}--- ${data.id} </li>`;
-           todo_display_list.innerHTML += li; } 
-      // }
-      //***************(display current user data only)************************
-      if (login_user === data.id && login_user != "admin@gmail.com" ) {     
-        var li = `<li>  ${data.work} ${data.time} ${data.date}
-       <span> <button onclick = "del(${index})"> Delete </button> </span>   </li> `;
-        todo_display_list.innerHTML += li; } 
+       //***************(display current user data only)************************
+      if (login_user === data.id && login_user != "admin@gmail.com") {
+        var li = `<li >  
+        <input type="checkbox"  id="check_box" >
+        ${data.work} 
+        <span style="font-size:15px">${data.date} <hr> ${data.day}</span>   
+        <span> <button onclick = "del(${index})"> Delete </button> </span>  
+         </li> `;
+        todo_display_list.innerHTML += li;
+       }
     });
+  } else {
+    todo_display_list.innerHTML = "<h1> Todo is empty </h1>";
   }
-  else { todo_display_list.innerHTML = "<h1> Todo is empty </h1>";  }
 }
-
 
 //*******************************( Delete Function )*********************************
 
@@ -145,18 +157,20 @@ kr todo ke updated lis show kr day ga*/
 
 function del(objectIndexNo) {
   var arrayFromstorage = localStorage.getItem("local_storage_array"); //geting arry from local storage
-  var  array_from_storage_parse= JSON.parse(arrayFromstorage)
+  var array_from_storage_parse = JSON.parse(arrayFromstorage);
   console.log(objectIndexNo);
-console.log(array_from_storage_parse);
+  console.log(array_from_storage_parse);
 
- array_from_storage_parse.splice(objectIndexNo,1,)
-console.log(array_from_storage_parse);
+  array_from_storage_parse.splice(objectIndexNo, 1);
+  console.log(array_from_storage_parse);
 
-localStorage.removeItem("local_storage_array")
-localStorage.setItem("local_storage_array",JSON.stringify(array_from_storage_parse))
+  localStorage.removeItem("local_storage_array");
+  localStorage.setItem(
+    "local_storage_array",
+    JSON.stringify(array_from_storage_parse)
+  );
 
-displaytodolist(); // yea updated array(todo list display kry ga) 
+  displaytodolist(); // yea updated array(todo list display kry ga)
 }
-
 
 displaytodolist();
