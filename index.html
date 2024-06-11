@@ -19,13 +19,26 @@
         <button class="parent_button" type="button" onclick="sumbit()" >Login</button>
     </div>
 
-    <div id="todo">
+    <div id="todo">        
 
         <div class="todo_block">
+          
             <input type="text" placeholder="todo text" id="tod_text" maxlength="30">
+            
+            <select id="catagory">
+                <option value="Select catagory" disabled selected> Select catagory</option>
+                <option value="Personal"> Personal</option>
+                <option value="Work"> Work </option>
+                <option value="Home"> Home </option>
+                <option value="Education"> Education </option>
+    
+            </select>
+
             <button class="btn" onclick="add_todo()">ADD TODO</button>
 
         </div>
+        
+        
 
         <ul id="todo_display_list" >Todo display list</ul>
 

@@ -79,6 +79,7 @@ h1 {
     opacity: 0.5;
 }
 
+
 #todo {
     /* border: 2px solid rgb(121, 42, 42); */
     width: 60%;
@@ -87,22 +88,28 @@ h1 {
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    padding: 5px;
 }
-
-/* *********************** for todo page**************************** */
-
 .todo_block {
     width: 95%;
+    height: 70px;
     margin: 20px auto;
-   /* border: 2px solid rgb(51, 193, 7);  */
+   border-bottom: 2px;
+   border-left: 0px;
+   border-right: 0px;
+   border-style: solid;
+   border-color: white;
    justify-content: space-between;
-   display: flex;
+   display: flex; 
+   /* flex-direction: column; */
     align-items: center;
+    justify-content: space-between;
     text-align: center;
 }
 
 #tod_text {
-    width: 80%;
+    width: 50%;
+    height: 50px;
     padding: 15px;
     border-color: white;
     color: white;
@@ -119,9 +126,14 @@ h1 {
     /* border: 2px solid rgb(121, 42, 42); */
     
 }
+#catagory{
+    width: 24%;
+    height: 50px;
+    text-align: center;
+}
 
 .btn {
-    width: 15%;
+    width: 24%;
     height: 50px;
     padding: 13px;
     font-weight: bold;
@@ -253,7 +265,7 @@ ul {
     }
 
     #todo {
-        /* border: 2px solid rgb(121, 42, 42); */
+        border: 2px solid rgb(121, 42, 42);
         width: 98%;
         margin: 0px auto;
         display: flex;
@@ -291,6 +303,7 @@ ul {
         box-shadow: -3px 1px 4px rgba(120, 237, 120, 0.6);;
         cursor: pointer;
     }
+
     #tod_text {
         width: 80%;
         padding: 10px;
