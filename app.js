@@ -122,8 +122,8 @@ function displaytodolist() {
     arr.forEach(function (data, index) {
       //***************( display all data b/c admin is login)*****************
       if (login_user == "admin@gmail.com" && data.id == "admin@gmail.com") {
-        var li = `<li class="unchecked_style" style="color:gray"> 
-        <input type="checkbox" class="box" >
+        var li = `<li class="unchecked_style"> 
+        <input type="checkbox" onclick="checkboox_check(this)" >
          <span style="color: "> ${data.work} <hr> ${data.id} </span>
          <span style="font-size:15px">${data.date} <hr> ${data.day}</span>   
           <span> <button onclick = "del(${index})"> Delete </button> </span> 
@@ -144,7 +144,7 @@ function displaytodolist() {
       //***************(display current user data only)************************
       if (login_user === data.id && login_user != "admin@gmail.com") {
         var li = `<li class="unchecked_style " >  
-        <input type="checkbox"  class="box" >
+        <input type="checkbox" onclick="checkboox_check(this)" >
         <span>${data.work} </span> 
         <span style="font-size:15px">${data.date} <hr> ${data.day}</span>   
         <span> <button onclick = "del(${index})"> Delete </button> </span>  
@@ -188,23 +188,14 @@ function del(objectIndexNo) {
 
 displaytodolist();
 
-// jub check box pa cclick hoga to yea function call ho jay is function k call krtytime argument (this) pss ho ga
-// jo element name k varibale ma recive hoga phr us element sa us ka parent(li) ko get kry gy jis na ak class
-// unchecked_style class initially apply hoe ve ha yea is function ma us ko checkbox_style ke class sa replace kr day gy
 
-//*************(  event listener function when check box clicked/unclicked )**************/
-
-var box = document.getElementsByClassName("box");
-console.log(box);
-
-for (i = 0; i < box.length; i++) {
-  box[i].addEventListener("click", function () {
-    if (this.checked === true) {
-      this.parentElement.classList = "checkbox_style";
-      this.parentElement.children[3].style.display = "none";
-    } else if (this.checked === false) {
-      this.parentElement.classList = "unchecked_style";
-      this.parentElement.children[3].style.display = "block";
+function checkboox_check(ele){
+ 
+    if (ele.checked === true) {
+      ele.parentElement.classList = "checkbox_style";
+      ele.parentElement.children[3].style.display = "none";
+    } else if (ele.checked === false) {
+      ele.parentElement.classList = "unchecked_style";
+      ele.parentElement.children[3].style.display = "block";
     }
-  });
-}
+  }
