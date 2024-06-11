@@ -63,8 +63,16 @@ function add_todo() {
   if (tod_text.value) {
     var login_user = localStorage.getItem("eml");
     var d = new Date();
-    var dayy = ["Sunday", "Monday", "Tuesday","Wednesday","Thrusday","friday","saturday"];
-    
+    var dayy = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thrusday",
+      "friday",
+      "saturday",
+    ];
+
     var object = {
       id: login_user,
       work: tod_text.value,
@@ -95,7 +103,9 @@ function add_todo() {
       );
       tod_text.value = "";
     }
-  } else {alert("field is empty"); }
+  } else {
+    alert("field is empty");
+  }
 
   displaytodolist(); //jub user todo bna la ga tub yea unko list ma display kry ga
 }
@@ -112,33 +122,35 @@ function displaytodolist() {
     arr.forEach(function (data, index) {
       //***************( display all data b/c admin is login)*****************
       if (login_user == "admin@gmail.com" && data.id == "admin@gmail.com") {
-        var li = `<li class="admincolor"> 
-        <input type="checkbox" id="box">
-         ${data.work} -- ${data.id}
+        var li = `<li class="unchecked_style" style="color:gray"> 
+        <input type="checkbox" class="box" >
+         <span style="color: "> ${data.work} <hr> ${data.id} </span>
          <span style="font-size:15px">${data.date} <hr> ${data.day}</span>   
           <span> <button onclick = "del(${index})"> Delete </button> </span> 
          </li>`;
         todo_display_list.innerHTML += li;
-
-        } else if (login_user == "admin@gmail.com" && data.id != "admin@gmail.com" ) {
-          var li = `<li >  
-          <input type="checkbox"  id="check_box" >
-          ${data.work} -- ${data.id}
+      } else if (
+        login_user == "admin@gmail.com" &&
+        data.id != "admin@gmail.com"
+      ) {
+        var li = `<li class="unchecked_style">  
+        
+          <span> ${data.work} <hr> ${data.id} </span>
           <span style="font-size:15px">${data.date} <hr> ${data.day}</span>   
            </li> `;
         todo_display_list.innerHTML += li;
-        }
+      }
 
-       //***************(display current user data only)************************
+      //***************(display current user data only)************************
       if (login_user === data.id && login_user != "admin@gmail.com") {
-        var li = `<li >  
-        <input type="checkbox"  id="check_box" >
-        ${data.work} 
+        var li = `<li class="unchecked_style " >  
+        <input type="checkbox"  class="box" >
+        <span>${data.work} </span> 
         <span style="font-size:15px">${data.date} <hr> ${data.day}</span>   
         <span> <button onclick = "del(${index})"> Delete </button> </span>  
          </li> `;
         todo_display_list.innerHTML += li;
-       }
+      }
     });
   } else {
     todo_display_list.innerHTML = "<h1> Todo is empty </h1>";
@@ -175,3 +187,24 @@ function del(objectIndexNo) {
 }
 
 displaytodolist();
+
+// jub check box pa cclick hoga to yea function call ho jay is function k call krtytime argument (this) pss ho ga
+// jo element name k varibale ma recive hoga phr us element sa us ka parent(li) ko get kry gy jis na ak class
+// unchecked_style class initially apply hoe ve ha yea is function ma us ko checkbox_style ke class sa replace kr day gy
+
+//*************(  event listener function when check box clicked/unclicked )**************/
+
+var box = document.getElementsByClassName("box");
+console.log(box);
+
+for (i = 0; i < box.length; i++) {
+  box[i].addEventListener("click", function () {
+    if (this.checked === true) {
+      this.parentElement.classList = "checkbox_style";
+      this.parentElement.children[3].style.display = "none";
+    } else if (this.checked === false) {
+      this.parentElement.classList = "unchecked_style";
+      this.parentElement.children[3].style.display = "block";
+    }
+  });
+}
