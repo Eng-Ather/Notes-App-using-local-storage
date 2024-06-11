@@ -77,7 +77,7 @@ function add_todo() {
       id: login_user,
       work: tod_text.value,
       day: dayy[d.getDay()],
-      date: `${d.getDate()} - ${d.getMonth()}- ${d.getFullYear()}`,
+      date: `${d.getDate()} - ${d.getMonth()+1}- ${d.getFullYear()}`,
     };
     console.log(object);
     var local_storage_array = localStorage.getItem("local_storage_array"); //geting arry from local storage
@@ -123,10 +123,10 @@ function displaytodolist() {
       //***************( display all data b/c admin is login)*****************
       if (login_user == "admin@gmail.com" && data.id == "admin@gmail.com") {
         var li = `<li class="unchecked_style"> 
-        <input type="checkbox" onclick="checkboox_check(this)" >
+        <input type="checkbox" class="box" onclick="checkboox_check(this)" >
          <span style="color: "> ${data.work} <hr> ${data.id} </span>
          <span style="font-size:15px">${data.date} <hr> ${data.day}</span>   
-          <span> <button onclick = "del(${index})"> Delete </button> </span> 
+          <span> <button onclick = "del(${index})" class="del_button"> Delete </button> </span> 
          </li>`;
         todo_display_list.innerHTML += li;
       } else if (
@@ -144,10 +144,10 @@ function displaytodolist() {
       //***************(display current user data only)************************
       if (login_user === data.id && login_user != "admin@gmail.com") {
         var li = `<li class="unchecked_style " >  
-        <input type="checkbox" onclick="checkboox_check(this)" >
+        <input type="checkbox"  class="box" onclick="checkboox_check(this)" >
         <span>${data.work} </span> 
         <span style="font-size:15px">${data.date} <hr> ${data.day}</span>   
-        <span> <button onclick = "del(${index})"> Delete </button> </span>  
+        <span> <button onclick = "del(${index})" del_button> Delete </button> </span>  
          </li> `;
         todo_display_list.innerHTML += li;
       }
