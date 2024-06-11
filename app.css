@@ -130,6 +130,24 @@ h1 {
     width: 24%;
     height: 50px;
     text-align: center;
+    color: white;
+    text-shadow: -3px 1px 4px blue;
+    font-size: 20px;
+    background: rgba(225, 225, 225, 0.2);
+    backdrop-filter: blur(10px);
+    font-size: 20px;
+}
+
+option{
+    width: 24%;
+    height: 50px;
+    text-align: center;
+    color: gray;
+    text-shadow: -3px 1px 4px blue;
+    font-size: 20px;
+    background: rgba(225, 225, 225, 0.2);
+    backdrop-filter: blur(10px);
+    font-size: 20px;
 }
 
 .btn {
